@@ -2,10 +2,50 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import {
+  Input,
+  Button,
+  FormControl,
+  FormLabel,
+  Stack,
+  Grid, 
+  GridItem
+} from '@chakra-ui/react';
+import { useState } from 'react';
+import erc3525 from "public/erc3525_diagram.png"; 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const [inputValue, setInputValue] = useState('');
+
+  const [inputValue1, setInputValue1] = useState('');
+  const [inputValue2, setInputValue2] = useState('');
+  const [inputValue3, setInputValue3] = useState('');
+  const [inputValue4, setInputValue4] = useState('');
+
+  const handleInputChange1 = (event) => {
+    setInputValue1(event.target.value);
+  };
+  
+  const handleInputChange2 = (event) => {
+    setInputValue2(event.target.value);
+  };
+  
+  const handleInputChange3 = (event) => {
+    setInputValue3(event.target.value);
+  };
+  
+  const handleInputChange4 = (event) => {
+    setInputValue4(event.target.value);
+  };
+
+  const handleButtonClick = () => {
+    console.log('Button clicked with input value:', inputValue);
+    // Do something with input value, such as sending to server
+  };
+  
   return (
     <>
       <Head>
@@ -17,11 +57,11 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
+            
+            <code className={styles.code}>ERC3525 Data Market Demo</code>
           </p>
           <div>
-            <a
+            {/* <a
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               target="_blank"
               rel="noopener noreferrer"
@@ -35,31 +75,68 @@ export default function Home() {
                 height={24}
                 priority
               />
-            </a>
+            </a> */}
           </div>
         </div>
 
-        <div className={styles.center}>
+      <div className={styles.center}>
+          <div className={styles.rightPart}>
+            <Grid templateColumns="repeat(2, 1fr)" gap={4} className={styles.dataInput}>
+          <GridItem>
+            <FormControl>
+              <FormLabel>Enter Data Name:</FormLabel>
+              <Input value={inputValue1} onChange={handleInputChange1} />
+            </FormControl>
+          </GridItem>
+          <GridItem>
+            <FormControl>
+              <FormLabel>Enter Data Estimated Value:</FormLabel>
+              <Input value={inputValue2} onChange={handleInputChange2} />
+            </FormControl>
+          </GridItem>
+          <GridItem>
+            <FormControl>
+              <FormLabel>Enter Data Type:</FormLabel>
+              <Input value={inputValue3} onChange={handleInputChange3} />
+            </FormControl>
+          </GridItem>
+          <GridItem>
+            <FormControl>
+              <FormLabel>Tokenized Value Range:</FormLabel>
+              <Input value={inputValue4} onChange={handleInputChange4} />
+            </FormControl>
+          </GridItem>
+          <GridItem colSpan={2} >
+            <Button className={styles.submitButton} onClick={handleButtonClick}>Submit</Button>
+          </GridItem>
+            </Grid>
+          </div>
+          <div className={styles.leftPart}>
+          
+            <div className={styles.displayData}>
+            <div className={styles.gridContainer}>
+              <Grid gap={12}>
+                <div>Data Name: </div>
+                <div>Data Value: </div>
+                <div>Data Type: </div>
+                <div>Data Range: </div>
+                </Grid>
+            </div>
+            </div>
+            <div className={styles.imageContainer}>
           <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
+                className = {styles.erc3525}
+                src={erc3525}
+                alt="erc3525"  
+                width={100}
+                height={100}
+                priority
+              />
+              </div>
           </div>
         </div>
 
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -116,7 +193,7 @@ export default function Home() {
               with&nbsp;Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
     </>
   )

@@ -78,6 +78,9 @@
   align-items: center;
   position: relative;
   padding: 4rem 0;
+  background-color: rgb(45, 41, 41);
+  width:900px; 
+  height: 100%; 
 }
 
 .center::before {
@@ -104,6 +107,58 @@
   transform: translateZ(0);
 }
 
+.leftPart {
+  flex: 1; 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.rightPart {
+  flex:1; 
+  /* background-color: black; */
+}
+
+.dataInput {
+  margin-left: 50px;
+}
+
+.erc3525 {
+}
+
+.submitButton {
+  margin-top: 20px;
+  
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #4b80bf 0, #5468ff6e 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
 .logo,
 .thirteen {
   position: relative;
@@ -128,6 +183,28 @@
   content: '';
   position: absolute;
   z-index: -1;
+}
+
+.displayData{
+  background-color: rgb(77, 72, 72);
+  width:50px; 
+  flex: 1 1 50%;
+  border-radius: 20px;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: 30%;
+  height: 175px;
+}
+.gridContainer {
+  margin-right: 50%;
+  margin-top: 13%;
+}
+
+.imageContainer {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Conic Gradient Animation */
