@@ -3,8 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 4rem;
   min-height: 100vh;
+  width: 100%;
 }
 
 .description {
@@ -16,6 +17,7 @@
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+  margin-bottom: 20px;
 }
 
 .description a {
@@ -49,9 +51,11 @@
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
+  background: rgb(88, 88, 87); 
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  height: 200px;
+  width: 300px; 
+  margin-left: 40px;
 }
 
 .card span {
@@ -79,7 +83,8 @@
   position: relative;
   padding: 4rem 0;
   background-color: rgb(45, 41, 41);
-  width:900px; 
+  width:1100px; 
+  border-radius: 10px;
   height: 100%; 
 }
 
@@ -119,8 +124,27 @@
   /* background-color: black; */
 }
 
+.queryInput {
+  width:60px; 
+  margin-left: 5px; 
+  border-radius: 5px;
+}
+
+.actionButton {
+  background: radial-gradient(100% 100% at 100% 0, #4b80bf 0, #5468ff6e 100%);
+  border-radius: 5px;
+  width: 50px;
+  margin-left: 20px;
+}
+
+.statusRow {
+   width: 100%;
+   margin-right: -20px;
+}
+
 .dataInput {
-  margin-left: 50px;
+  margin-left: 20px;
+  margin-right:90px; 
 }
 
 .erc3525 {
@@ -187,7 +211,7 @@
 
 .displayData{
   background-color: rgb(77, 72, 72);
-  width:50px; 
+  width:40px; 
   flex: 1 1 50%;
   border-radius: 20px;
   align-content: center;
@@ -195,10 +219,15 @@
   justify-content: center;
   align-items: 30%;
   height: 175px;
+  margin-left: 50px;
 }
 .gridContainer {
   margin-right: 50%;
-  margin-top: 13%;
+  margin-top: 7%;
+}
+
+.inputBox {
+  width: 100px;
 }
 
 .imageContainer {
@@ -265,6 +294,7 @@
 
   .card {
     padding: 1rem 2.5rem;
+
   }
 
   .card h2 {
